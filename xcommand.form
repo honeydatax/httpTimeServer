@@ -1,0 +1,20 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,50,50)
+  Text = ("Xcommand")
+  { TextArea1 TextArea
+    MoveScaled(1,1,48,44)
+  }
+  { TextBox1 TextBox
+    MoveScaled(2,46,38,3)
+  }
+  { Button1 Button
+    MoveScaled(42,46,7,3)
+    Text = ("run")
+  }
+  { Timer1 #Timer
+    #MoveScaled(43,43)
+    Delay = 750
+  }
+}
