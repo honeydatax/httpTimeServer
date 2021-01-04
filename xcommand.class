@@ -26,7 +26,7 @@ If i > 0 Then
   Else
   p = Shell "/bin/sh  -c '" & v & "' > /home/pi/out"
 Endif
-TextArea1.Text = TextArea1.Text & Chr(13) & Chr(10) & v 
+TextArea1.Text = v & Chr(13) & Chr(10) & TextArea1.Text 
 Timer1.Start()
 End Sub
 
@@ -37,7 +37,7 @@ Timer1.Stop()
 f2 = Open "/home/pi/out" For Input
 While Not Eof(f2)
   Line Input #f2, v
-  TextArea1.Text = TextArea1.Text & Chr(13) & Chr(10) & v
+  TextArea1.Text = v & Chr(13) & Chr(10) & TextArea1.Text
 Wend
 Close f2
 Timer1.Stop()
