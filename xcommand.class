@@ -39,9 +39,7 @@ While Not Eof(f2)
   Line Input #f2, v
   TextArea1.Text = TextArea1.Text & Chr(13) & Chr(10) & v
 Wend
-Timer1.Stop()
 Close f2
-
-  
-
+Timer1.Stop()
+Form.Refresh()
 End
