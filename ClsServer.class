@@ -1,0 +1,51 @@
+' Gambas class file
+
+Public com As Gaqmes[]
+Public idxss As Integer
+Public Clients As Object[]
+Public Srv As ServerSocket
+Public Tport As Integer = 8080
+Public Sub Socket_Read()
+  Dim lists As String[]
+  Dim kl As String
+  Dim ee As Integer
+  Dim vv As String
+  Dim vvv As String
+  Dim v As String
+  Dim i As Integer
+  Dim ii As Integer
+  Dim scad As String
+  ee = 0
+  Read #Last, scad, Lof(Last)
+    
+  
+  ee = 0
+   v = Date() & " " & Time()
+   Write #Last, v, Len(v)
+   Close #Last
+   Finally 
+    If ee = 1 Then
+    Close Last
+    End If
+  Catch 
+    'Write #Last, "error\r\n", 9
+End
+Public Sub Socket_closed()
+  Print "closed..."
+  Clients.Remove(Clients.Find(Last))  
+End
+Public Sub Srv_Connection(Host As String)
+  Dim mysock As Socket
+  Print Host
+      mysock = Srv.Accept()
+      Clients.Add(mysock)     
+End
+Public Sub _New()
+  Clients = New Object[]
+  com = New Gaqmes[]
+  Srv = New ServerSocket As "Srv"
+  idxss = 0
+  Srv.Port = Tport
+  Srv.Type = Net.Internet
+  Srv.Listen()
+End
