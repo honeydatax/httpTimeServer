@@ -1,6 +1,6 @@
 ' Gambas class file
 
-Public com As Gaqmes[]
+
 Public idxss As Integer
 Public Clients As Object[]
 Public Srv As ServerSocket
@@ -42,7 +42,7 @@ Public Sub Srv_Connection(Host As String)
 End
 Public Sub _New()
   Clients = New Object[]
-  com = New Gaqmes[]
+  
   Srv = New ServerSocket As "Srv"
   idxss = 0
   Srv.Port = Tport
